@@ -1,0 +1,222 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: blue;
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-button:hover {
+  background-color: #3a007a;
+}
+
+.add-product-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  background-color: white;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+.del-product-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  background-color: white;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+.up-product-panel {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  background-color: white;
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.add-product-panel.hidden {
+  transform: translate(100%, -50%);
+}
+
+.add-product-panel.show {
+  transform: translate(0, -50%);
+}
+
+.up-product-panel.hidden {
+  transform: translate(100%, -50%);
+}
+.up-product-panel.show {
+  transform: translate(0, -50%);
+}
+
+.del-product-panel.hidden {
+  transform: translate(100%, -50%);
+}
+.del-product-panel.show {
+  transform: translate(0, -50%);
+}
+
+.add-product-form input,
+.add-product-form .btnAdd {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.add-product-form button {
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.up-product-form button:hover {
+  background-color: #3a007a;
+}
+.up-product-form input,
+.up-product-form .btnUp {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btnUp{
+  background-color: blue;
+  color:white
+}
+
+.up-product-form .fechar{
+  background-color: white;
+  border: none;
+}
+
+.add-product-form button {
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.add-product-form button:hover {
+  background-color: #3a007a;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pesquisar {
+  display: flex;
+  margin:5vh;
+}
+
+.pesquisar input {
+  margin-right: 10px;
+}
+
+#deleteProductButton {
+  bottom: 90px; 
+  background-color: #ff0202; 
+}
+
+#deleteProductButton:hover {
+  background-color: #ff0202; 
+}
+
+#updateProductButton {
+  bottom: 160px; 
+}
+
+.action-button {
+  position: fixed;
+  right: 20px; 
+  background-color: #6a0dad; 
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remover {
+  margin-right: 10px;
+}
+
+.fechar{
+  border: none;
+}
+
