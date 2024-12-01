@@ -32,7 +32,7 @@ btnPesquisar.addEventListener('click', async (e) => {
 
   const url = `https://api-produtos-v2.vercel.app/produtos/${desc}`;
 
-  await fetch(url, {
+  fetch(url, {
     method: 'GET', // Método HTTP
     headers: {
       'Content-Type': 'application/json' // Cabeçalho indicando o tipo de conteúdo
@@ -52,7 +52,7 @@ btnPesquisar.addEventListener('click', async (e) => {
       console.error('Erro:', error); // Lida com erros na requisição
     });
 
-  await carregarProdutos();
+  carregarProdutos();
 
 
 })
@@ -106,8 +106,8 @@ btnAdd.addEventListener('click', async (e) => {
         console.error('Erro:', error); // Lida com erros na requisição
       });
 
-    buscaDados();
     alert('PRODUTO ADICIONADO!')
+    window.location.reload();
 
   } else {
     alert('Campos vazios!')
@@ -155,9 +155,8 @@ btnUp.addEventListener('click', async (e) => {
 
     alert('PRODUTO ATUALIZADO!')
     panelup.classList.toggle('show');
-
-
-    buscaDados();
+    
+    window.location.reload();
 
   } else {
     alert('Campos vazios!')
