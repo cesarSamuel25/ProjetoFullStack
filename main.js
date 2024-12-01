@@ -74,7 +74,7 @@ btnAdd.addEventListener('click', async (e) => {
     const url = 'https://api-produtos-v2.vercel.app/produtos';
 
     const data = {
-      descricao: descricaoADD.value.toLowerCase(),
+      descricao: descricaoADD.value.toLowerCase().trim(),
       valor: valorADD.value,
       quantidade: quantidadeADD.value,
       dataDaUltimaAlteracao: new Date()
