@@ -74,7 +74,7 @@ btnAdd.addEventListener('click', async (e) => {
     const url = 'https://api-produtos-v2.vercel.app/produtos';
 
     const data = {
-      descricao: descricaoADD.value.trim().toLowerCase(),
+      descricao: descricaoADD.value.toLowerCase().trim(),
       valor: valorADD.value,
       quantidade: quantidadeADD.value,
       dataDaUltimaAlteracao: new Date()
@@ -86,7 +86,7 @@ btnAdd.addEventListener('click', async (e) => {
 
     paneladd.classList.toggle('show');
 
-    await fetch(url, {
+    fetch(url, {
       method: 'POST', // Método HTTP
       headers: {
         'Content-Type': 'application/json' // Cabeçalho indicando o tipo de conteúdo
@@ -106,12 +106,8 @@ btnAdd.addEventListener('click', async (e) => {
         console.error('Erro:', error); // Lida com erros na requisição
       });
 
-
+    buscaDados();
     alert('PRODUTO ADICIONADO!')
-    paneladd.classList.toggle('show');
-
-
-    await buscaDados();
 
   } else {
     alert('Campos vazios!')
@@ -136,7 +132,7 @@ btnUp.addEventListener('click', async (e) => {
     descricaoUP.value = '';
     quantidadeUP.value = '';
 
-    await fetch(url, {
+    fetch(url, {
       method: 'PATCH', // Método HTTP
       headers: {
         'Content-Type': 'application/json' // Cabeçalho indicando o tipo de conteúdo
@@ -161,7 +157,7 @@ btnUp.addEventListener('click', async (e) => {
     panelup.classList.toggle('show');
 
 
-    await buscaDados();
+    buscaDados();
 
   } else {
     alert('Campos vazios!')
@@ -220,7 +216,7 @@ async function deleteRow(button) {
 
   if (confirm(`Tem certeza que deseja apagar: ${desc}`)) {
     const url = `https://api-produtos-v2.vercel.app/produtos/${desc}`;
-    await fetch(url, {
+    fetch(url, {
       method: 'DELETE', // Método HTTP
       headers: {
         'Content-Type': 'application/json' // Cabeçalho indicando o tipo de conteúdo
@@ -238,10 +234,9 @@ async function deleteRow(button) {
       .catch(error => {
         console.error('Erro:', error); // Lida com erros na requisição
       });
-
-    await alert('Produto Deletado!');
-    await buscaDados();
   }
+  alert('Produto Deletado!');
+  window.location.reload();
 }
 
 let descParam;
